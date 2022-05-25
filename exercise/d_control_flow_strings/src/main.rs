@@ -19,6 +19,13 @@ fn main() {
         // - If arg is "sum", then call the sum() function
         // - If arg is "double", then call the double() function
         // - If arg is anything else, then call the count() function, passing "arg" to it.
+        if arg == "sum" {
+            sum()
+        } else if arg == "double" {
+            double()
+        } else {
+            count(arg)
+        }
 
 
         // 1b. Now try passing "sum", "double" and "bananas" to the program by adding your argument
@@ -32,6 +39,9 @@ fn sum() {
     // and add them all together (increment the `sum` variable).  Hint: You should get 255
     // Run it with `cargo run sum`
 
+    for i in 7..24 {
+        sum += i
+    }
 
     println!("The sum is {}", sum);
 }
