@@ -27,19 +27,23 @@ fn main() {
     // indicating whether or not the String both starts with a "b" AND contains an "a".
     // Hint 1: use `.starts_with("b")` and `.contains("a")`
     // Hint 2: `&&` is the boolean "AND" operator
-    //
-    //if eat(arg) {
-    //    println!("Might be bananas");
-    //} else {
-    //    println!("Not bananas");
-    //}
+
+    if eat(arg) {
+       println!("Might be bananas");
+    } else {
+       println!("Not bananas");
+    }
 
     // Try running this program with "boat", "banana", and "grapes" as the arguments :-)
 
     // Challenge: Write a function "add" that takes *references* to two integer arguments,
     // dereferences them and adds them together, and returns the result.
-    //
-    // println!("1 + 2 = {}, even via references", add(&1, &2));
+
+    println!("1 + 2 = {}, even via references", add(&1, &2));
+}
+
+fn eat(data: String) -> bool {
+    (data).starts_with("b") && (data).contains("a")
 }
 
 fn inspect(data: &str) {
@@ -51,11 +55,11 @@ fn inspect(data: &str) {
 }
 
 fn change(data: &mut String) {
-    if (*data).ends_with("s") {
-        println!("plural");
-    } else {
-        println!("singular");
+    if !(*data).ends_with("s") {
         (*data).push_str("s")
     }
+}
 
+fn add(x: &i32, y: &i32) -> i32 {
+    (*x) + (*y)
 }
